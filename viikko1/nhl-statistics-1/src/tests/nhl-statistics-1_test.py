@@ -1,5 +1,5 @@
 import unittest
-from statistics import Statistics
+from statistics import Statistics, SortBy
 from player import Player
 
 class PlayerReaderStub:
@@ -42,3 +42,13 @@ class TestStatistics(unittest.TestCase):
     def test_top_palauttaa_oikean_pituisen_listan(self):
         lista = self.statistics.top(3)
         self.assertAlmostEqual(len(lista), 4)
+    
+    def test_top_sorts_by_goals(self):
+        lista = self.statistics.top(4, SortBy.GOALS)
+        #Järjestetyn listan ensimmäinen tulisi olla Lemieux, jolla on eniten maaleja
+        self.assertEqual(lista[0].name, "Lemieux")
+    
+    def test_top_sorts_by_assists(self):
+        lista = self.statistics.top(4, SortBy.ASSISTS)
+        #Järjestetyn listan ensimmäinen tulisi olla Gretzky, jolla on eniten syöttöjä
+        self.assertEqual(lista[0].name, "Gretzky")
