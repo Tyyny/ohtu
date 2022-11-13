@@ -9,7 +9,6 @@ packages = [{include = "poetry_web"}]
 [tool.poetry.dependencies]
 python = "^3.8"
 flask = "^2.2.2"
-jsonpickle = "^2.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
