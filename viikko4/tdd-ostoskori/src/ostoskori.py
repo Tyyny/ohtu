@@ -3,6 +3,8 @@ from ostos import Ostos
 
 class Ostoskori:
     def __init__(self):
+
+        
         pass
         # ostoskori tallettaa Ostos-oliota, yhden per korissa oleva Tuote
 
